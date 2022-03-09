@@ -3,7 +3,7 @@ var request = new XMLHttpRequest();
 
 console.log("HELLO!");
 // Open a new connection, using the GET request on the URL endpoint
-request.open('GET', 'https://io.adafruit.com/api/v2/Peaceful_Ferret/feeds/light-values/data?x-aio-key=aio_xdpl323VUyasdfasdPg2Knj', true);
+request.open('GET', 'https://io.adafruit.com/api/v2/Peaceful_Ferret/feeds/light-values/data?x-aio-key=aio_fcHG38GmC5LAOzG6HgIWsluzhket', true);
 
 request.onload = function () {
 	 var data = JSON.parse(this.response);
