@@ -10,13 +10,16 @@ request.onload = function () {
 	 console.log("Last value: " + data.last_value);
 	 console.log("Updated at: " + data.updated_at);
 	 var date = new Date(data.updated_at);
-	 console.log(date);
+	 var lightordark;
+	 var nicedate = date.toLocaleString();
 	 if(data.last_value < 100){
-		 console.log("DARK");
+		 lightordark = "dark"
 	 }
 	 else{
-		 console.log("LIGHT");
+		 lightordark = "light";
 	 }
+	 var updatetext = "It is currently " + lightordark + " in my house, as of " + nicedate;
+	 document.getElementById("updatetext").textContent= updatetext;
 }
 
 // Send request
