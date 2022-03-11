@@ -7,19 +7,20 @@ request.open('GET', 'https://io.adafruit.com/api/v2/Peaceful_Ferret/feeds/light-
 
 request.onload = function () {
 	 var data = JSON.parse(this.response);
-	 console.log("Last value: " + data.last_value);
 	 console.log("Updated at: " + data.updated_at);
-	 var date = new Date(data.updated_at);
 	 var lightordark;
-	 var nicedate = date.toLocaleString();
+	 var imageurl;
 	 if(data.last_value < 100){
-		 lightordark = "dark"
+		 lightordark = "My lights are off and saving money! Hurray!";
+		 imageurl = "images/lightoff.png";
 	 }
 	 else{
-		 lightordark = "light";
+		 lightordark = "My lights are on! Oh no!";
+		 imageurl = "images/lighton.png";
 	 }
-	 var updatetext = "It is currently <b>" + lightordark + "</b> in my house, as of " + nicedate + "!";
-	 document.getElementById("updatetext").textContent= updatetext;
+	 document.getElementById("updatetext").textContent= lightordark;
+	 document.getElementById("bulb").src= imageurl;
+
 }
 
 // Send request
