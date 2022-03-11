@@ -18,7 +18,7 @@ request.onload = function () {
 	 else{
 		 lightordark = "light";
 	 }
-	 var updatetext = "It is currently " + lightordark + " in my house, as of " + nicedate;
+	 var updatetext = "It is currently <b>" + lightordark + "</b> in my house, as of " + nicedate + "!";
 	 document.getElementById("updatetext").textContent= updatetext;
 }
 
