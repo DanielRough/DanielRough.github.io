@@ -23,5 +23,13 @@ request.onload = function () {
 
 }
 
+
 // Send request
 request.send();
+
+$( "#greenled" ).click(function() {
+  alert( "Handler for green called." );
+});
+$( "#yellowled" ).click(function() {
+  alert( "Handler for yellow called." );
+});
