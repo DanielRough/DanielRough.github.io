@@ -28,8 +28,8 @@ request.onload = function () {
 request.send();
 
 $( "#greenled" ).click(function() {
-  console.log( "Handler for green called." );
+  alert( "Handler for green called." );
 });
 $( "#yellowled" ).click(function() {
-  console.log( "Handler for yellow called." );
+  alert( "Handler for yellow called." );
 });
