@@ -30,14 +30,14 @@ request.send();
 $( "#greenled" ).click(function() {
 	console.log( "Handler for green called." );
 	var greenrequest = new XMLHttpRequest();
-    greenrequest.open('POST', 'https://io.adafruit.com/api/v2/Peaceful_Ferret/feeds/digital-out/data');
+    greenrequest.open('POST', 'https://io.adafruit.com/api/v2/Peaceful_Ferret/feeds/digital-out/data', true);
 	greenrequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 	greenrequest.send(JSON.stringify({ "value": "0" }));
 });
 $( "#yellowled" ).click(function() {
 	console.log( "Handler for yellow called." );
 	var yellowrequest = new XMLHttpRequest();
-	yellowrequest.open('POST', 'https://io.adafruit.com/api/v2/Peaceful_Ferret/feeds/digital-out/data');
+	yellowrequest.open('POST', 'https://io.adafruit.com/api/v2/Peaceful_Ferret/feeds/digital-out/data', true);
 	yellowrequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 	yellowrequest.send(JSON.stringify({ "value": "1" }));
 });
