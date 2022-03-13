@@ -32,6 +32,10 @@ $( "#greenled" ).click(function() {
 	var greenrequest = new XMLHttpRequest();
     greenrequest.open('POST', 'https://io.adafruit.com/api/v2/Peaceful_Ferret/feeds/digital-out/data', true);
 	greenrequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	greenrequest.onload = function () {
+		// do something to response
+		console.log(this.responseText);
+	};
 	greenrequest.send(JSON.stringify({ "value": "0" }));
 });
 $( "#yellowled" ).click(function() {
@@ -39,5 +43,9 @@ $( "#yellowled" ).click(function() {
 	var yellowrequest = new XMLHttpRequest();
 	yellowrequest.open('POST', 'https://io.adafruit.com/api/v2/Peaceful_Ferret/feeds/digital-out/data', true);
 	yellowrequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	yellowrequest.onload = function () {
+		// do something to response
+		console.log(this.responseText);
+	};
 	yellowrequest.send(JSON.stringify({ "value": "1" }));
 });
