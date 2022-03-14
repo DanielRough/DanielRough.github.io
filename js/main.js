@@ -28,9 +28,10 @@ request.onload = function () {
 request.send();
 
 $( "#greenled" ).click(function() {
+	var key = $('#txt_name').val();
 	console.log( "Handler for green called." );
 	var greenrequest = new XMLHttpRequest();
-    greenrequest.open('POST', 'https://io.adafruit.com/api/v2/Peaceful_Ferret/feeds/digital-out/data', true);
+    greenrequest.open('POST', 'https://io.adafruit.com/api/v2/Peaceful_Ferret/feeds/digital-out/data?x-aio-key='+key, true);
 	greenrequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 	greenrequest.onload = function () {
 		console.log(this.responseText);
@@ -38,9 +39,10 @@ $( "#greenled" ).click(function() {
 	greenrequest.send(JSON.stringify({ "value": "0" }));
 });
 $( "#yellowled" ).click(function() {
+	var key = $('#txt_name').val();
 	console.log( "Handler for yellow called." );
 	var yellowrequest = new XMLHttpRequest();
-	yellowrequest.open('POST', 'https://io.adafruit.com/api/v2/Peaceful_Ferret/feeds/digital-out/data', true);
+	yellowrequest.open('POST', 'https://io.adafruit.com/api/v2/Peaceful_Ferret/feeds/digital-out/data?x-aio-key='+key, true);
 	yellowrequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 	yellowrequest.onload = function () {
 		console.log(this.responseText);
