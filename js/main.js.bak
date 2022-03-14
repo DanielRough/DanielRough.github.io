@@ -37,7 +37,7 @@ $( "#greenled" ).click(function() {
 	greenrequest.onload = function () {
 		console.log(this.responseText);
 	};
-	greenrequest.send(JSON.stringify({ "value": "0" }));
+	greenrequest.send(JSON.stringify({ "value": "1" }));
 });
 $( "#yellowled" ).click(function() {
 	var key = $('#txt_name').val();
@@ -49,7 +49,7 @@ $( "#yellowled" ).click(function() {
 	yellowrequest.onload = function () {
 		console.log(this.responseText);
 	};
-	yellowrequest.send(JSON.stringify({ "value": "1" }));
+	yellowrequest.send(JSON.stringify({ "value": "0" }));
 });
 
 function getCookie(cname) {
