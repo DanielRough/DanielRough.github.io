@@ -20,7 +20,7 @@ request.onload = function () {
 	 }
 	 document.getElementById("updatetext").textContent= lightordark;
 	 document.getElementById("bulb").src= imageurl;
-
+	 $('#txt_name').val(getCookie("key");
 }
 
 
